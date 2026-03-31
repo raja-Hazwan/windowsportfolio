@@ -10,6 +10,8 @@ const DesktopIcon = (props: {
   appID: number;
   doubleClick: () => void;
   left?: number;
+  iconSize?: number;
+  iconTop?: number;
 }) => {
   const [selected, setSelected] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -40,10 +42,11 @@ const DesktopIcon = (props: {
         <div>
           <div
             className={selected ? styles.iconimage_selected : styles.iconimage}
+            style={{ top: props.iconTop ?? 0 }}
           >
             <Image
-              width={45}
-              height={45}
+              width={props.iconSize ?? 45}
+              height={props.iconSize ?? 45}
               style={{ maxWidth: "100%" }}
               src={props.img.src}
               alt="icon"

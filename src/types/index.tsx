@@ -35,6 +35,7 @@ export enum App {
   HELP,
   WARNING,
   WELCOME,
+  NOTEPAD,
 }
 
 export enum WorkType {

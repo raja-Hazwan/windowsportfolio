@@ -16,6 +16,7 @@ import gallery from "../../assets/folder_image.png";
 import outlook from "../../assets/outlook.png";
 import file from "../../assets/workaccordion/file.png";
 import emptyfile from "../../assets/workaccordion/emptyfile.png";
+import notepadIcon from "../../assets/notepad.png";
 import butterfly from "../../assets/butterfly.png";
 import col1 from "../../assets/gallery/0.webp";
 import col2 from "../../assets/gallery/1.webp";
@@ -155,6 +156,20 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.INFO,
       prompt: true,
+      backBtnActive: false,
+    },
+  ],
+  [
+    9,
+    {
+      id: 0,
+      title: "Notepad",
+      message: "",
+      Icon: notepadIcon,
+      isMinimized: false,
+      zIndex: 0,
+      program: App.NOTEPAD,
+      prompt: false,
       backBtnActive: false,
     },
   ],

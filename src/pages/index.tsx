@@ -25,6 +25,8 @@ import MyWork from "@/programs/MyWork";
 import MsgBox from "components/MsgBox/MsgBox";
 import Welcome from "@/programs/Welcome";
 import MyGallery from "@/programs/MyGallery";
+import Notepad from "@/programs/Notepad";
+import notepad from "../../assets/notepad.png";
 export default function Home() {
   const [bootComplete, setBootComplete] = useState(false);
   const Tabs = useSelector((state: RootState) => state.tab.tray);
@@ -108,6 +110,15 @@ export default function Home() {
             title="My Work"
             img={cmd}
           />
+          <DesktopIcon
+            appID={3}
+            left={90}
+            iconSize={70}
+            iconTop={-15}
+            doubleClick={() => handleRunApp(9)}
+            title="Notepad"
+            img={notepad}
+          />
 
           <DesktopIcon
             appID={1}
@@ -146,6 +157,8 @@ export default function Home() {
                   <p>{tab.message}</p>
                 ) : tab.program === App.HELP ? (
                   <p>{tab.message}</p>
+                ) : tab.program === App.NOTEPAD ? (
+                  <Notepad />
                 ) : null}
               </WinForm>
             );
