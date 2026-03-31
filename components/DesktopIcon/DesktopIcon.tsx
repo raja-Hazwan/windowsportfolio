@@ -9,6 +9,7 @@ const DesktopIcon = (props: {
   img: StaticImageData;
   appID: number;
   doubleClick: () => void;
+  left?: number;
 }) => {
   const [selected, setSelected] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -30,7 +31,7 @@ const DesktopIcon = (props: {
   return (
     <Draggable nodeRef={ref} bounds="parent">
       <div
-        style={{ top: props.appID * 90 - 40 }}
+        style={{ top: props.appID * 90 - 40, left: props.left ?? 0 }}
         onDoubleClick={props.doubleClick}
         onClick={HighlightIcon}
         className={styles.icon}

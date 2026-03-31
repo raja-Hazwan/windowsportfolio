@@ -9,9 +9,10 @@ import bin from "../../assets/recycling_bin.png";
 import pdf from "../../assets/pdf.png";
 import github from "../../assets/github.png";
 import cmd from "../../assets/cmd.png";
-import solitare from "../../assets/solitaire.png";
 import linkedin from "../../assets/linkedin.png";
+import help from "../../assets/help.png";
 import WinForm from "components/WinForm/WinForm";
+import BootScreen from "components/BootScreen/BootScreen";
 import { useEffect, useState } from "react";
 import store from "@/redux/store";
 import { AppDirectory } from "@/appData";
@@ -25,6 +26,7 @@ import MsgBox from "components/MsgBox/MsgBox";
 import Welcome from "@/programs/Welcome";
 import MyGallery from "@/programs/MyGallery";
 export default function Home() {
+  const [bootComplete, setBootComplete] = useState(false);
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
 
@@ -34,12 +36,12 @@ export default function Home() {
   };
 
   const handleOpenGitHub = () => {
-    window.open("https://github.com/firwer", "_blank", "noreferrer");
+    window.open("https://github.com/raja-Hazwan", "_blank", "noreferrer");
   };
 
   const handleOpenLinkedin = () => {
     window.open(
-      "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+      "https://www.linkedin.com/in/raja-muhammad-hazwan-bin-raja-azman-04502234b/",
       "_blank",
       "noreferrer"
     );
@@ -48,6 +50,10 @@ export default function Home() {
   const handleOpenResume = () => {
     window.open("./Resume.pdf");
   };
+
+  if (!bootComplete) {
+    return <BootScreen onComplete={() => setBootComplete(true)} />;
+  }
 
   return (
     <>
@@ -96,17 +102,19 @@ export default function Home() {
             img={github}
           />
           <DesktopIcon
-            appID={6}
+            appID={2}
+            left={90}
             doubleClick={() => handleRunApp(2)}
             title="My Work"
             img={cmd}
           />
 
           <DesktopIcon
-            appID={7}
-            doubleClick={() => void 0}
-            title="My Hobbies"
-            img={solitare}
+            appID={1}
+            left={90}
+            doubleClick={() => handleRunApp(0)}
+            title="Quick Start Guide"
+            img={help}
           />
           {Tabs.map((tab, index) => {
             return tab.isMinimized ? (

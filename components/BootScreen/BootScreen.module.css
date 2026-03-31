@@ -1,0 +1,266 @@
+/* Step 1 - Black screen */
+.black {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+
+/* XP Flag Logo */
+.xpLogo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  width: 72px;
+  height: 72px;
+  transform: perspective(200px) rotateY(-10deg) rotateX(5deg);
+}
+
+.xpPane {
+  border-radius: 2px;
+}
+
+.xpRed    { background: #FF5A00; border-radius: 4px 2px 2px 2px; }
+.xpGreen  { background: #00B900; border-radius: 2px 4px 2px 2px; }
+.xpBlue   { background: #006FD6; border-radius: 2px 2px 2px 4px; }
+.xpYellow { background: #FFB900; border-radius: 2px 2px 4px 2px; }
+
+/* Step 2 - Loading bar screen */
+.step2 {
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.step2Center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.logoText {
+  color: #fff;
+  font-size: 32px;
+  font-family: "Franklin Gothic Medium", "Tahoma", sans-serif;
+  font-weight: 300;
+  margin: 8px 0 0 0;
+  letter-spacing: 2px;
+}
+
+.logoText span {
+  font-weight: 700;
+  color: #7faaff;
+}
+
+.logoSub {
+  color: #aaa;
+  font-size: 13px;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.loadingBarWrap {
+  position: absolute;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loadingBar {
+  border: 1px solid #b2b2b2;
+  border-radius: 6px;
+  width: 220px;
+  height: 22px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 3px;
+  background: #000;
+}
+
+.loadingBox {
+  display: inline-block;
+  height: 100%;
+  width: 18px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    #2838c7 0%,
+    #5979ef 17%,
+    #869ef3 32%,
+    #869ef3 45%,
+    #5979ef 59%,
+    #2838c7 100%
+  );
+  animation: loader 3.5s infinite linear;
+}
+
+.loadingBox:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.loadingBox:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes loader {
+  0% {
+    transform: translateX(-250px);
+  }
+  100% {
+    transform: translateX(420px);
+  }
+}
+
+.step2Bottom {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 16px;
+  color: #fff;
+  font-size: 13px;
+  font-family: "Tahoma", sans-serif;
+}
+
+.username {
+  font-weight: bold;
+}
+
+/* Step 3 - Blue welcome screen */
+.step3 {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+      29.68% 27.76% at 5.94% 14.64%,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.16) 59.9%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #567dda;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.step3Header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: #012f9e;
+  border-bottom: 2px solid #fefefe;
+}
+
+.step3Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step3Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: #012f9e;
+  border-top: 2px solid #13920d;
+}
+
+/* Step 4 - Login screen */
+.login {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #1f4db7 0%, #0a1f6b 100%);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.loginHeader {
+  background: linear-gradient(to bottom, #3a75c4, #1a4ea0);
+  padding: 28px 40px;
+  border-bottom: 3px solid #0a3080;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.loginTitle {
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+  font-family: "Tahoma", sans-serif;
+  font-weight: normal;
+}
+
+.loginSubtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-family: "Tahoma", sans-serif;
+  margin: 0;
+}
+
+.loginCenter {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  padding: 16px 28px;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.loginCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.loginAvatar {
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.loginName {
+  font-size: 18px;
+  font-family: "Tahoma", sans-serif;
+  font-weight: bold;
+  margin: 0;
+}
+
+.loginHint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Tahoma", sans-serif;
+  margin: 4px 0 0 0;
+}
+
+.loginFooter {
+  background: linear-gradient(to top, #1040a0, #2060c0);
+  border-top: 3px solid #0a3080;
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  font-family: "Tahoma", sans-serif;
+}
