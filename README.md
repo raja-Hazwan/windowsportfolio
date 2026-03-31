@@ -4,7 +4,7 @@ This Website is built with Next.JS, Redux, HTML, CSS and whatever that make sens
 
 Built it for nostalgia and as a tribute to my software dev journey since my visual basic days
 
-### View My Website Here: [pohwp.dev](https://pohwp.dev)
+
 
 Currently Deployed on Vercel
 
