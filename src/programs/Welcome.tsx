@@ -21,39 +21,34 @@ import userprofile2 from "../../assets/userprofile2.jpg";
 import ebc1 from "../../assets/ebc1.webp";
 import ebc2 from "../../assets/ebc2.webp";
 
-const INTRO = `Hi, I'm Wei Pin, an aspiring software engineer and entrepreneur based in Singapore. I am 
-  currently a Computer Engineering Fresh Graduate at the National University of Singapore and I am
-  passionate about building innovative software solutions that solves problems.`;
+const INTRO = `Hi, I’m Raja Hazwan, an aspiring software developer based in Malaysia. I hold a degree in
+  Information Technology from the International Islamic University of Malaysia, and I’m passionate
+  about crafting meaningful digital experiences — from clean, functional web apps to creative
+  multimedia work.`;
 
-const WHYSITE = `I always love challenging myself to creating something different and interesting.
-The main reason why I chose to create a website that resembles a Windows XP OS is because my 
-software development journey first started back in the early 2010 when I was creating simple utility
-apps such as calculators, web browser, message encrypters, phishing app and simple chatbot using 
-Visual Basic on Visual Studio 2010 out of curiousity and fun. Now that I have more experience in
-software development, I decided to "recreate" the environment I used to work in back then and make
-it feel as though you are accessing my computer directly.`;
+const WHYSITE = `This website is more than just a portfolio — it’s a tribute to where it all began.
+Growing up, my earliest memories with technology were sitting in front of my dad’s PC, clicking
+through Windows, exploring every corner of the desktop out of pure curiosity. That old familiar
+interface sparked something in me that never went away. Building this site in the style of a classic
+Windows OS felt like the most personal way to show who I am as a developer — someone who’s come a
+long way from that curious kid, but never forgotten where the journey started.`;
 
-const INTERESTS = `Other than my interest in developing websites and apps for fun, I love solo
-travelling and exploring new places. It is during these times I get to reflect on my own life and
-step out of my comfort zone to talk to people within the local community and my hostel where I meet
-people from all over the world. Other than that, I am also a firm believer that the best way to 
-learn and grow as a person is to immerse yourself in a different culture and environment. This
-forces you become adaptable to new situations and learn to be more independent and self-reliant.`;
+const INTERESTS = `Outside of coding, my biggest passion is video editing. There’s something deeply
+satisfying about taking raw footage and shaping it into something that tells a story — whether it’s
+pacing the cuts just right, finding the perfect soundtrack, or adding that final color grade that
+ties everything together. To me, video editing sits at the intersection of technical precision and
+creative expression, which is probably why I enjoy it so much.`;
 
-const INTERESTS2 = `Other than traveling, I love trekking and cycling, and as a challenge to myself, I decided 
-to embark on a journey to the Everest Base Camp. After a 130KM, 2504M grueling vertical ascend from 
-Tenzing-Hillary Airport, widely regarded as some of the world’s most dangerous airports, I made it 
-with a friend of mine and our guide. The entire experience was spectacular as I have also met and struck up 
-conversations with trekkers from all walks of life and background, and we all had a common goal 
-of reaching the top of the base camp.`;
+const INTERESTS2 = `Video editing also taught me a lot about attention to detail and how much craft
+goes into things that look effortless. A well-edited video, like well-written code, only looks
+simple because a lot of thought went into it behind the scenes. That mindset carries over into
+everything I build — I care about the details, the flow, and the experience of whoever ends up
+using or watching the final product.`;
 
-const INTERESTS3 = `Also, I love (really in love with) drone photography and filming! This is my one true passion, as
-the angles I get are much more unique compared to any DSLR/phone camera. The perspectives that
-aerial shots offer are so mesmerizing that it makes you feel like a bird (and this fulfills my 
-desire to be able to fly lol) (You can view some of collection on this website). Lastly, I love 
-to read non-fiction books, especially those that are related to entrepreneurship, biographies, 
-and self-help, as those books usually contain a lot of valuable insights and satiate my curiosity 
-about the lives of others.
+const INTERESTS3 = `I’m always looking to grow — whether that’s picking up a new editing technique,
+experimenting with a new tech stack, or just finding a better way to tell a story. If you’d like
+to connect, collaborate, or just have a chat, feel free to reach out through any of the links on
+this page!
 `;
 
 interface props {
@@ -86,7 +81,7 @@ const Welcome = ({ id }: props) => {
       {!aboutmeView ? (
         <div>
           <h3 className={styles.welcome_text}>
-            Welcome To Wei Pin&apos;s Personal Website
+            Welcome To Raja Hazwan&apos;s Personal Website
           </h3>
           <p className={styles.subtitle}>
             Learn more about me by clicking any of the icons below to get
@@ -106,7 +101,7 @@ const Welcome = ({ id }: props) => {
                 tooltip="My Brain Dump"
                 onClick={() => {
                   window.open(
-                    "https://github.com/firwer",
+                    "https://github.com/raja-Hazwan",
                     "_blank",
                     "noreferrer"
                   );
@@ -118,7 +113,7 @@ const Welcome = ({ id }: props) => {
                 tooltip="Connect with me!"
                 onClick={() => {
                   window.open(
-                    "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+                    "https://www.linkedin.com/in/raja-muhammad-hazwan-bin-raja-azman-04502234b/",
                     "_blank",
                     "noreferrer"
                   );
