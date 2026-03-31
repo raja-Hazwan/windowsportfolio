@@ -2,7 +2,6 @@
 
 module.exports = {
   reactStrictMode: true,
-  turbopack: {},
   env: {
     BASE_URL: process.env.BASE_URL,
   },
