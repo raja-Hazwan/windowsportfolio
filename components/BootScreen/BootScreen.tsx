@@ -14,9 +14,9 @@ const BootScreen = ({ onComplete }: Props) => {
   const [step, setStep] = useState<Step>(1);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setStep(2), 500);
-    const t2 = setTimeout(() => setStep(3), 8500);
-    const t3 = setTimeout(() => setStep(4), 10500);
+    const t1 = setTimeout(() => setStep(2), 200);
+    const t2 = setTimeout(() => setStep(3), 3500);
+    const t3 = setTimeout(() => setStep(4), 5000);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -39,16 +39,15 @@ const BootScreen = ({ onComplete }: Props) => {
     return (
       <div className={styles.step2}>
         <div className={styles.step2Center}>
-          <Image src={xpLogo} alt="Windows XP" width={80} height={80} />
-          <p className={styles.logoText}>
-            Windows <span>XP</span>
-          </p>
+          <Image src={xpLogo} alt="Windows XP" width={340} height={240} />
         </div>
         <div className={styles.loadingBarWrap}>
           <div className={styles.loadingBar}>
-            <div className={styles.loadingBox} />
-            <div className={styles.loadingBox} />
-            <div className={styles.loadingBox} />
+            <div className={styles.loadingGroup}>
+              <div className={styles.loadingBox} />
+              <div className={styles.loadingBox} />
+              <div className={styles.loadingBox} />
+            </div>
           </div>
         </div>
         <div className={styles.step2Bottom}>
@@ -63,9 +62,6 @@ const BootScreen = ({ onComplete }: Props) => {
     return (
       <div className={styles.step3}>
         <div className={styles.step3Header} />
-        <div className={styles.step3Center}>
-          <Image src={xpLogo} alt="Windows XP" width={100} height={100} />
-        </div>
         <div className={styles.step3Footer} />
       </div>
     );
@@ -78,17 +74,23 @@ const BootScreen = ({ onComplete }: Props) => {
         <p className={styles.loginSubtitle}>Raja Hazwan&apos;s Personal Website</p>
       </div>
       <div className={styles.loginCenter}>
-        <div className={styles.loginCard} onClick={handleLogin}>
-          <Image
-            src={userprofile}
-            alt="profile"
-            width={64}
-            height={64}
-            className={styles.loginAvatar}
-          />
-          <div>
-            <p className={styles.loginName}>Raja Hazwan</p>
-            <p className={styles.loginHint}>Click to enter</p>
+        <div className={styles.loginLeft}>
+          <Image src={xpLogo} alt="Windows XP" width={200} height={141} />
+        </div>
+        <div className={styles.loginDivider} />
+        <div className={styles.loginRight}>
+          <div className={styles.loginCard} onClick={handleLogin}>
+            <Image
+              src={userprofile}
+              alt="profile"
+              width={96}
+              height={96}
+              className={styles.loginAvatar}
+            />
+            <div>
+              <p className={styles.loginName}>Raja Hazwan</p>
+              <p className={styles.loginHint}>Click to enter</p>
+            </div>
           </div>
         </div>
       </div>
