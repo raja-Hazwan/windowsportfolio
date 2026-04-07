@@ -19,7 +19,7 @@ import { RootState } from "@/types";
 
 const Outlook = () => {
   const currTabID = useSelector((state: RootState) => state.tab.id);
-  const [from, setFrom] = useState("");
+  const [from, setFrom] = useState("feedback@rajahazwan.my");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const emailRef = React.useRef<HTMLInputElement>(null);
@@ -200,7 +200,7 @@ const Outlook = () => {
             <input
               className={styles.textfield}
               ref={emailRef}
-              placeholder="Enter your email address"
+              defaultValue="feedback@rajahazwan.my"
               onChange={(e) => {
                 setFrom(e.target.value);
               }}

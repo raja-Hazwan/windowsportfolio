@@ -24,15 +24,23 @@ export default async function handler(
 
   const resend = new Resend(API_KEY);
 
-  const { error } = await resend.emails.send({
-    from: "feedback@pohwp.dev",
-    to: TO_EMAIL,
-    subject: "New Message From A Visitor: " + subject,
-    text: "From: " + from + "\nMessage: " + message,
-  });
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "feedback@rajahazwan.my",
+      to: TO_EMAIL,
+      subject: "New Message From A Visitor: " + subject,
+      text: "From: " + from + "\nMessage: " + message,
+    });
 
-  if (error) {
-    return res.status(500).json({ error: error.message });
+    console.log("[send-email] data:", data);
+    console.log("[send-email] error:", error);
+
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+  } catch (err: any) {
+    console.error("[send-email] threw:", err);
+    return res.status(500).json({ error: err?.message ?? "Unexpected error" });
   }
 
   return res.status(200).json({ success: true });
