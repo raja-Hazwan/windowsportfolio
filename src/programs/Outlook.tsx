@@ -22,11 +22,6 @@ const Outlook = () => {
   const [from, setFrom] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const API_KEY = process.env.NEXT_PUBLIC_MAILGUN_API;
-  const FROM_EMAIL = "feedback@pohwp.dev";
-  const TO_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
-  const axios = require("axios");
-  const captchaRef = React.useRef(null);
   const emailRef = React.useRef<HTMLInputElement>(null);
   const subjectRef = React.useRef<HTMLInputElement>(null);
   const messageRef = React.useRef<HTMLTextAreaElement>(null);
@@ -34,22 +29,17 @@ const Outlook = () => {
     if (!from || !subject || !message) {
       return;
     }
-    
+
     try {
-      await axios({
-        method: "post",
-        url: `https://api.mailgun.net/v3/pohwp.dev/messages`,
-        auth: {
-          username: "api",
-          password: API_KEY,
-        },
-        params: {
-          from: FROM_EMAIL,
-          to: TO_EMAIL,
-          subject: "New Message From A Visitor: " + subject,
-          text: "From: " + from + "\nMessage: " + message,
-        },
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ from, subject, message }),
       });
+
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
       
       // Success handling
       const newTab = {
