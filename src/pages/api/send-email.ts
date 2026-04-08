@@ -38,6 +38,10 @@ export default async function handler(
     if (error) {
       return res.status(500).json({ error: error.message });
     }
+
+    if (!data?.id) {
+      return res.status(500).json({ error: "Email was not sent — no confirmation ID received from Resend. Check that your domain is verified." });
+    }
   } catch (err: any) {
     console.error("[send-email] threw:", err);
     return res.status(500).json({ error: err?.message ?? "Unexpected error" });
