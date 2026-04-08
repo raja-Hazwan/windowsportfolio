@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./BootScreen.module.css";
-import userprofile from "../../assets/userprofile.jpg";
+import userprofile from "../../assets/userpic2.png";
 import xpLogo from "../../assets/xp_logo_full.png";
 
 type Step = 1 | 2 | 3 | 4;

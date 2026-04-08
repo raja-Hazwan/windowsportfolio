@@ -28,7 +28,7 @@ export default async function handler(
     const { data, error } = await resend.emails.send({
       from: "feedback@rajahazwan.my",
       to: TO_EMAIL,
-      subject: "New Message From A Visitor: " + subject,
+      subject: "You've Got a Message: " + subject,
       text: "From: " + from + "\nMessage: " + message,
     });
 
