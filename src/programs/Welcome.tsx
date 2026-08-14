@@ -18,8 +18,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import userprofile from "../../assets/userprofile.jpg";
 import userpic1 from "../../assets/userpic1.png";
-import userpic2 from "../../assets/userpic2.png";
-import userpic3 from "../../assets/userpic3.png";
 
 const INTRO = `Hi, I’m Raja Hazwan, an aspiring software developer based in Malaysia. I hold a degree in
   Information Technology from the International Islamic University of Malaysia, and I’m passionate
@@ -158,21 +156,7 @@ const Welcome = ({ id }: props) => {
             <div className={styles.pic_col}>
               <Image
                 alt="profile_pic"
-                src={userpic2.src}
-                width={200}
-                height={200}
-                className={styles.profile_pic}
-              />
-              <Image
-                alt="profile_pic"
                 src={userpic1.src}
-                width={200}
-                height={200}
-                className={styles.profile_pic}
-              />
-              <Image
-                alt="profile_pic"
-                src={userpic3.src}
                 width={200}
                 height={200}
                 className={styles.profile_pic}
