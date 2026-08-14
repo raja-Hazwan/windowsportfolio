@@ -18,12 +18,9 @@ import file from "../../assets/workaccordion/file.png";
 import emptyfile from "../../assets/workaccordion/emptyfile.png";
 import notepadIcon from "../../assets/notepad.png";
 import butterfly from "../../assets/butterfly.png";
-import col1 from "../../assets/gallery/0.webp";
-import col2 from "../../assets/gallery/1.webp";
-import col3 from "../../assets/gallery/2.webp";
-import col4 from "../../assets/gallery/3.webp";
-import col5 from "../../assets/gallery/4.webp";
-import col6 from "../../assets/gallery/5.webp";
+import col1 from "../../assets/gallery/desk-setup.jpg";
+import col2 from "../../assets/gallery/keychain-speaker.jpg";
+import col3 from "../../assets/gallery/kl-skyline.jpg";
 
 export const TechIcon = {
   JAVASCRIPT:
@@ -355,29 +352,5 @@ export const PhotoCollection = [
     desc: "",
     date: "",
     img: col3,
-  },
-  {
-    id: 3,
-    title: "",
-    location: "",
-    desc: "",
-    date: "",
-    img: col4,
-  },
-  {
-    id: 4,
-    title: "",
-    location: "",
-    desc: "",
-    date: "",
-    img: col5,
-  },
-  {
-    id: 5,
-    title: "",
-    location: "",
-    desc: "",
-    date: "",
-    img: col6,
   },
 ] as GalleryImage[];
